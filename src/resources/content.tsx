@@ -2,20 +2,20 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "Rohit",
+  lastName: "Chandel",
+  name: `Rohit Chandel`,
+  role: "CS @ SIUE • Computer Vision & AWS",
+  avatar: "/images/avatar.jpg", // TODO: replace with your headshot path, e.g., /images/rohit.jpg
+  email: "rohit@example.com", // TODO: set your real email
+  location: "America/Chicago",
+  languages: ["English", "Hindi"],
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false, // toggle on if you start a Substack/Mailchimp later
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>Weekly notes on AI, vision, and cloud.</>,
 };
 
 const social: Social = [
@@ -24,7 +24,7 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/your-username", // TODO
   },
   {
     name: "LinkedIn",
@@ -65,14 +65,14 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Selene, a design engineer at{" "}
+      I'm Rohit Chandel, an undergraduate at SIU
       <Logo
         dark
         icon="/trademarks/wordmark-dark.svg"
         style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
       />
-      , where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      {" "}SIUE. I work on computer vision (YOLOv8, low-light enhancement) and build
+      <br /> AWS-backed apps. After hours, I ship portfolio-ready tools & visuals.
     </>
   ),
 };
