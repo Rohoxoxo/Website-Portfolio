@@ -12,27 +12,10 @@ const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? ""; // -> "Webs
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // REQUIRED for GitHub Pages (outputs static site to ./out)
-  output: "export",
-
-  // REQUIRED for export: disable Next image optimizer
-  images: {
-    unoptimized: true,
-    remotePatterns: [
-      { protocol: "https", hostname: "www.google.com", pathname: "**" },
-    ],
-  },
-
-  // Pages is served at https://rohoxoxo.github.io/Website-Portfolio/
-  // so assets must be prefixed with /Website-Portfolio
-  basePath: isGitHub ? `/${repoName}` : "",
-  assetPrefix: isGitHub ? `/${repoName}/` : undefined,
-
-  // your existing options
-  pageExtensions: ["ts", "tsx", "md", "mdx"],
-  transpilePackages: ["next-mdx-remote"],
-  sassOptions: { compiler: "modern", silenceDeprecations: ["legacy-js-api"] },
+  output: 'export',        // tells Next to prepare static files
+  images: { unoptimized: true }, // since GitHub Pages can’t do Next.js Image Optimization
+  basePath: '/Website-Portfolio',  // repo name
+  assetPrefix: '/Website-Portfolio',
 };
-
-// Keep MDX enabled
 export default withMDX(nextConfig);
+
